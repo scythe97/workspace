@@ -1,4 +1,4 @@
-name: RDP2
+name: RDP3
 
 on: workflow_dispatch
 
@@ -17,9 +17,9 @@ jobs:
     - name: Connect your NGROK account
       run: .\ngrok.exe authtoken $Env:NGROK_AUTH_TOKEN
       env:
-        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN2 }}
+        NGROK_AUTH_TOKEN: ${{ secrets.NGROK_AUTH_TOKEN3 }}
     - name: Make YML file for NGROK.
-      run: start NGROK-US.bat
+      run: start NGROK-AP.bat
     - name: Enable RDP Access.
       run: | 
         Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server'-name "fDenyTSConnections" -Value 0
